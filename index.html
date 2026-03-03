@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kaashuis Oss – Kaas, Broodjes, Lunch & Catering</title>
+  <meta name="description" content="Kaashuis Oss – kaas is onze specialiteit, maar de belegde broodjes zijn legendarisch. Lunch, warme maaltijden, catering en afhalen & bezorgen. Molenstraat 47, Oss.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600;700&family=Playfair+Display+SC:wght@400;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#92400E',
+            secondary: '#B45309',
+            bg: '#FEF3C7',
+            textMain: '#78350F',
+            accent: '#F59E0B',
+            cream: '#FFFBEB',
+          },
+          fontFamily: {
+            heading: ['"Playfair Display SC"', 'serif'],
+            body: ['Karla', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Karla', sans-serif; background: #FEF3C7; color: #78350F; }
+    h1,h2,h3 { font-family: 'Playfair Display SC', serif; }
+    .nav-link { transition: color 200ms; }
+    .nav-link:hover { color: #F59E0B; }
+    .btn-primary { background: #92400E; color: #FFFBEB; font-weight: 600; padding: 0.875rem 2rem; border-radius: 4px; transition: background 200ms, transform 150ms; display: inline-block; cursor: pointer; }
+    .btn-primary:hover { background: #78350F; transform: translateY(-1px); }
+    .btn-gold { background: #F59E0B; color: #78350F; font-weight: 700; padding: 0.875rem 2rem; border-radius: 4px; transition: background 200ms; display: inline-block; cursor: pointer; }
+    .btn-gold:hover { background: #D97706; }
+    .btn-outline { border: 2px solid #F59E0B; color: #F59E0B; font-weight: 600; padding: 0.875rem 2rem; border-radius: 4px; transition: all 200ms; display: inline-block; cursor: pointer; }
+    .btn-outline:hover { background: #F59E0B; color: #78350F; }
+    .card { background: #FFFBEB; border-radius: 8px; box-shadow: 0 2px 8px rgba(146,64,14,0.12); transition: box-shadow 200ms, transform 200ms; }
+    .card:hover { box-shadow: 0 6px 20px rgba(146,64,14,0.2); transform: translateY(-2px); }
+    .hero-bg { background: linear-gradient(135deg, #78350F 0%, #92400E 50%, #B45309 100%); }
+    .review-stars { color: #F59E0B; }
+    #mobile-menu { display: none; }
+    #mobile-menu.open { display: block; }
+    #lightbox { display: none; }
+    #lightbox.open { display: flex; }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="sticky top-0 z-50 shadow-lg" style="background:#78350F;">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <a href="index.html" class="font-heading text-xl font-bold tracking-wide" style="color:#FDE68A;">Kaashuis Oss</a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="index.html" class="nav-link font-medium" style="color:#FDE68A;">Home</a>
+        <a href="menu.html" class="nav-link font-medium" style="color:#FDE68A;">Menu</a>
+        <a href="catering.html" class="nav-link font-medium" style="color:#FDE68A;">Catering</a>
+        <a href="contact.html" class="nav-link font-medium" style="color:#FDE68A;">Contact</a>
+        <a href="http://bestellen.kaashuisoss.com/" target="_blank" class="btn-gold text-sm py-2 px-5">Bestel Online</a>
+      </div>
+      <button id="hamburger" class="md:hidden cursor-pointer p-2" aria-label="Menu openen">
+        <svg class="w-6 h-6" style="color:#FDE68A;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu" style="background:#78350F; border-top:1px solid #92400E;">
+    <div class="flex flex-col px-4 py-4 gap-4">
+      <a href="index.html" class="nav-link font-medium py-2" style="color:#FDE68A;">Home</a>
+      <a href="menu.html" class="nav-link font-medium py-2" style="color:#FDE68A;">Menu</a>
+      <a href="catering.html" class="nav-link font-medium py-2" style="color:#FDE68A;">Catering</a>
+      <a href="contact.html" class="nav-link font-medium py-2" style="color:#FDE68A;">Contact</a>
+      <a href="http://bestellen.kaashuisoss.com/" target="_blank" class="btn-gold text-center">Bestel Online</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero-bg min-h-screen flex items-center relative overflow-hidden">
+  <div class="absolute inset-0 opacity-20" style="background: radial-gradient(circle at 80% 30%, #F59E0B 0%, transparent 50%);"></div>
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <p class="font-semibold text-lg mb-4 tracking-wider uppercase" style="color:#FDE68A;">Molenstraat 47, Oss</p>
+        <h1 class="font-heading mb-6" style="font-size:clamp(2.5rem,6vw,4.5rem); line-height:1.1; color:#FFFBEB;">Kaas is onze<br>specialiteit.</h1>
+        <p class="text-xl mb-4 leading-relaxed" style="color:#FDE68A;">Men zegt belegde broodjes ook...</p>
+        <p class="text-lg mb-8 leading-relaxed" style="color:#FCD34D;">Eigenlijk alles — van een heerlijke lunch en snelle snack tot een complete catering voor feestjes en partijen.</p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="http://bestellen.kaashuisoss.com/" target="_blank" class="btn-gold text-lg text-center">Bestel Online</a>
+          <a href="menu.html" class="btn-outline text-lg text-center">Bekijk Menu</a>
+        </div>
+      </div>
+      <div class="hidden md:block">
+        <img src="images/google_place_2.jpg" alt="Kaashuis Oss – heerlijke broodjes en kaas" class="rounded-xl shadow-2xl w-full object-cover h-[28rem]" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="py-10" style="background:#92400E;">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+      <div>
+        <div class="font-heading text-4xl font-bold" style="color:#FDE68A;">4.7 ★</div>
+        <div class="text-sm mt-1" style="color:#FCD34D;">355 Google reviews</div>
+      </div>
+      <div>
+        <div class="font-heading text-4xl font-bold" style="color:#FDE68A;">1000+</div>
+        <div class="text-sm mt-1" style="color:#FCD34D;">Fans op Facebook</div>
+      </div>
+      <div>
+        <div class="font-heading text-4xl font-bold" style="color:#FDE68A;">Di–Za</div>
+        <div class="text-sm mt-1" style="color:#FCD34D;">Geopend v.a. 09:30</div>
+      </div>
+      <div>
+        <div class="font-heading text-4xl font-bold" style="color:#FDE68A;">3×</div>
+        <div class="text-sm mt-1" style="color:#FCD34D;">Lunch · Afhalen · Bezorgen</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIENSTEN -->
+<section class="py-20" style="background:#FEF3C7;">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="font-heading text-4xl text-center mb-4" style="color:#78350F;">Wat wij voor u doen</h2>
+    <p class="text-center text-lg mb-12 max-w-2xl mx-auto" style="color:#92400E;">Van een snel broodje tot een volledig catering arrangement.</p>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="card p-8 text-center">
+        <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style="background:#FDE68A;">
+          <svg class="w-8 h-8" style="color:#78350F;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+        </div>
+        <h3 class="font-heading text-2xl mb-3" style="color:#78350F;">Kaas & Lunchroom</h3>
+        <p class="leading-relaxed" style="color:#92400E;">Kaas is onze specialiteit. Een wisselend assortiment aan bijzondere kazen — kom langs voor de nieuwste aankomsten.</p>
+        <a href="menu.html" class="btn-primary mt-6 text-sm py-2 px-4">Bekijk Menu</a>
+      </div>
+      <div class="card p-8 text-center">
+        <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style="background:#FDE68A;">
+          <svg class="w-8 h-8" style="color:#78350F;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+        </div>
+        <h3 class="font-heading text-2xl mb-3" style="color:#78350F;">Afhalen & Bezorgen</h3>
+        <p class="leading-relaxed" style="color:#92400E;">Geen tijd maar snakt u toch naar een heerlijk broodje? Bestel gemakkelijk online voor afhalen en bezorging.</p>
+        <a href="http://bestellen.kaashuisoss.com/" target="_blank" class="btn-gold mt-6 text-sm py-2 px-4">Bestel nu</a>
+      </div>
+      <div class="card p-8 text-center">
+        <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style="background:#FDE68A;">
+          <svg class="w-8 h-8" style="color:#78350F;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        </div>
+        <h3 class="font-heading text-2xl mb-3" style="color:#78350F;">Catering</h3>
+        <p class="leading-relaxed" style="color:#92400E;">Wij verzorgen graag het eten op feestjes en partijen. Van broodjes en soep tot buffetten op maat.</p>
+        <a href="catering.html" class="btn-primary mt-6 text-sm py-2 px-4">Meer info</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOTO GALERIJ -->
+<section class="py-20" style="background:#FFFBEB;">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="font-heading text-4xl text-center mb-4" style="color:#78350F;">Een kijkje bij ons</h2>
+    <p class="text-center text-lg mb-10" style="color:#92400E;">Verse broodjes, heerlijke kazen en een gezellige sfeer.</p>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+      <img src="images/google_place_1.jpg" alt="Kaashuis Oss" class="rounded-lg w-full h-48 object-cover cursor-pointer hover:opacity-90 transition-opacity" onclick="openLightbox(this.src)" loading="lazy">
+      <img src="images/google_place_2.jpg" alt="Kaashuis Oss broodjes" class="rounded-lg w-full h-48 object-cover cursor-pointer hover:opacity-90 transition-opacity" onclick="openLightbox(this.src)" loading="lazy">
+      <img src="images/google_place_3.jpg" alt="Kaashuis Oss kaas" class="rounded-lg w-full h-48 object-cover cursor-pointer hover:opacity-90 transition-opacity" onclick="openLightbox(this.src)" loading="lazy">
+      <img src="images/google_place_4.jpg" alt="Kaashuis Oss interieur" class="rounded-lg w-full h-48 object-cover cursor-pointer hover:opacity-90 transition-opacity" onclick="openLightbox(this.src)" loading="lazy">
+      <img src="images/google_place_5.jpg" alt="Kaashuis Oss lunch" class="rounded-lg w-full h-48 object-cover cursor-pointer hover:opacity-90 transition-opacity" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="rounded-lg flex items-center justify-center h-48 cursor-pointer" style="background:#92400E;" onclick="window.location.href='http://bestellen.kaashuisoss.com/'">
+        <div class="text-center p-4">
+          <div class="font-heading text-xl mb-2" style="color:#FFFBEB;">Klaar voor bestelling?</div>
+          <div class="btn-gold text-sm py-2 px-4 inline-block">Bestel nu</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="py-20" style="background:#FEF3C7;">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="font-heading text-4xl text-center mb-4" style="color:#78350F;">Wat onze gasten zeggen</h2>
+    <div class="flex justify-center items-center gap-2 mb-10">
+      <span class="text-2xl" style="color:#F59E0B;">★★★★★</span>
+      <span class="font-semibold text-xl" style="color:#78350F;">4.7</span>
+      <span style="color:#92400E;">op Google (355 beoordelingen)</span>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="card p-6">
+        <div class="mb-2" style="color:#F59E0B;">★★★★★</div>
+        <p class="italic mb-4" style="color:#92400E;">"Heerlijke verse betaalbare broodjes en meer. Deze mensen maken het voor iedereen bereikbaar."</p>
+        <div class="font-semibold text-sm" style="color:#78350F;">— Mandy Hazelkamp</div>
+      </div>
+      <div class="card p-6">
+        <div class="mb-2" style="color:#F59E0B;">★★★★★</div>
+        <p class="italic mb-4" style="color:#92400E;">"Goede broodjes voor een eerlijke prijs! Gezellige bediening."</p>
+        <div class="font-semibold text-sm" style="color:#78350F;">— Jelle van der Sommen</div>
+      </div>
+      <div class="card p-6">
+        <div class="mb-2" style="color:#F59E0B;">★★★★★</div>
+        <p class="italic mb-4" style="color:#92400E;">"We zijn nog nooit naar huis gegaan of thuis gekomen met een teleurgesteld gevoel."</p>
+        <div class="font-semibold text-sm" style="color:#78350F;">— El Presidente</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-20" style="background:#78350F;">
+  <div class="max-w-4xl mx-auto px-4 text-center">
+    <h2 class="font-heading text-4xl mb-4" style="color:#FFFBEB;">Zin in een lekker broodje?</h2>
+    <p class="text-xl mb-8" style="color:#FDE68A;">Bestel online voor afhalen of bezorging, of kom langs op de Molenstraat.</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="http://bestellen.kaashuisoss.com/" target="_blank" class="btn-gold text-lg text-center">Bestel Online</a>
+      <a href="contact.html" class="btn-outline text-lg text-center">Contact & Openingstijden</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="py-10" style="background:#451a03; color:#FDE68A;">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid md:grid-cols-3 gap-8 mb-8">
+      <div>
+        <h3 class="font-heading text-lg mb-3" style="color:#FCD34D;">Kaashuis Oss</h3>
+        <p class="text-sm" style="color:#FDE68A99;">Kaas, broodjes, lunch en catering in hartje Oss.</p>
+      </div>
+      <div>
+        <h3 class="font-heading text-lg mb-3" style="color:#FCD34D;">Openingstijden</h3>
+        <div class="text-sm space-y-1" style="color:#FDE68A99;">
+          <div>Maandag: Gesloten</div>
+          <div>Dinsdag t/m Zaterdag: 09:30 – 16:00</div>
+          <div>Zondag: Gesloten</div>
+        </div>
+      </div>
+      <div>
+        <h3 class="font-heading text-lg mb-3" style="color:#FCD34D;">Contact</h3>
+        <div class="text-sm space-y-1" style="color:#FDE68A99;">
+          <div>Molenstraat 47, 5341 GB Oss</div>
+          <div><a href="tel:0412769090" class="hover:text-yellow-300 cursor-pointer">0412 769 090</a></div>
+          <div class="pt-2">
+            <a href="menu.html" class="hover:text-yellow-300 mr-4 cursor-pointer">Menu</a>
+            <a href="catering.html" class="hover:text-yellow-300 mr-4 cursor-pointer">Catering</a>
+            <a href="contact.html" class="hover:text-yellow-300 cursor-pointer">Contact</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="border-t pt-6 text-center text-sm" style="border-color:#78350F; color:#92400E;">
+      © 2026 Kaashuis Oss. Gebouwd door <a href="https://www.code-lieshout.nl" class="hover:text-yellow-300 cursor-pointer">Code Lieshout</a>.
+    </div>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" class="fixed inset-0 z-[100] items-center justify-center" style="background:rgba(0,0,0,0.9);" onclick="closeLightbox()">
+  <button class="absolute top-4 right-4 text-white text-3xl cursor-pointer" onclick="closeLightbox()">✕</button>
+  <img id="lightbox-img" src="" alt="" class="max-w-[90vw] max-h-[90vh] object-contain rounded-lg">
+</div>
+
+<script>
+  document.getElementById('hamburger').addEventListener('click', function() {
+    document.getElementById('mobile-menu').classList.toggle('open');
+  });
+  function openLightbox(src) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox').style.display = 'flex';
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').style.display = 'none';
+  }
+  document.addEventListener('keydown', function(e) { if(e.key === 'Escape') closeLightbox(); });
+</script>
+</body>
+</html>

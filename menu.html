@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu – Kaashuis Oss</title>
+  <meta name="description" content="Bekijk het volledige menu van Kaashuis Oss – broodjes, burgers, uitsmijters, frituur, smoothies, dranken en meer.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600;700&family=Playfair+Display+SC:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Karla', sans-serif; background: #FEF3C7; color: #78350F; }
+    h1,h2,h3 { font-family: 'Playfair Display SC', serif; }
+    .nav-link { transition: color 200ms; }
+    .nav-link:hover { color: #F59E0B; }
+    .btn-gold { background: #F59E0B; color: #78350F; font-weight: 700; padding: 0.875rem 2rem; border-radius: 4px; transition: background 200ms; display: inline-block; cursor: pointer; }
+    .btn-gold:hover { background: #D97706; }
+    #mobile-menu { display: none; }
+    #mobile-menu.open { display: block; }
+    .menu-item { display: flex; justify-content: space-between; align-items: baseline; padding: 0.5rem 0; border-bottom: 1px dotted #D97706; }
+    .menu-item:last-child { border-bottom: none; }
+    .menu-category { background: #FFFBEB; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(146,64,14,0.1); margin-bottom: 1.5rem; }
+    .tab-btn { padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer; transition: all 200ms; font-weight: 600; }
+    .tab-btn.active { background: #92400E; color: #FFFBEB; }
+    .tab-btn:not(.active) { background: #FFFBEB; color: #92400E; border: 1px solid #92400E; }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+  </style>
+</head>
+<body>
+<nav class="sticky top-0 z-50 shadow-lg" style="background:#78350F;">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <a href="index.html" class="font-heading text-xl font-bold tracking-wide" style="color:#FDE68A; font-family:'Playfair Display SC',serif;">Kaashuis Oss</a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="index.html" class="nav-link font-medium" style="color:#FDE68A;">Home</a>
+        <a href="menu.html" class="nav-link font-medium" style="color:#FCD34D;">Menu</a>
+        <a href="catering.html" class="nav-link font-medium" style="color:#FDE68A;">Catering</a>
+        <a href="contact.html" class="nav-link font-medium" style="color:#FDE68A;">Contact</a>
+        <a href="http://bestellen.kaashuisoss.com/" target="_blank" class="btn-gold text-sm py-2 px-5">Bestel Online</a>
+      </div>
+      <button id="hamburger" class="md:hidden cursor-pointer p-2" aria-label="Menu openen">
+        <svg class="w-6 h-6" style="color:#FDE68A;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu" style="background:#78350F; border-top:1px solid #92400E;">
+    <div class="flex flex-col px-4 py-4 gap-4">
+      <a href="index.html" class="nav-link font-medium py-2" style="color:#FDE68A;">Home</a>
+      <a href="menu.html" class="nav-link font-medium py-2" style="color:#FDE68A;">Menu</a>
+      <a href="catering.html" class="nav-link font-medium py-2" style="color:#FDE68A;">Catering</a>
+      <a href="contact.html" class="nav-link font-medium py-2" style="color:#FDE68A;">Contact</a>
+      <a href="http://bestellen.kaashuisoss.com/" target="_blank" class="btn-gold text-center">Bestel Online</a>
+    </div>
+  </div>
+</nav>
+
+<section class="py-16 px-4" style="background:#78350F;">
+  <div class="max-w-4xl mx-auto text-center">
+    <h1 class="font-heading text-5xl mb-4" style="color:#FFFBEB;">Menu</h1>
+    <p class="text-xl" style="color:#FDE68A;">Naast de heerlijkheden op onze menukaart vindt u bij ons een wisselend assortiment aan bijzondere kazen en tal van andere lekkernijen.</p>
+  </div>
+</section>
+
+<section class="py-12 px-4" style="background:#FEF3C7;">
+  <div class="max-w-4xl mx-auto">
+    <!-- Tabs -->
+    <div class="flex flex-wrap gap-2 mb-8">
+      <button class="tab-btn active" onclick="showTab('broodjes')">Broodjes</button>
+      <button class="tab-btn" onclick="showTab('warm')">Warm</button>
+      <button class="tab-btn" onclick="showTab('burgers')">Burgers</button>
+      <button class="tab-btn" onclick="showTab('frituur')">Frituur</button>
+      <button class="tab-btn" onclick="showTab('dranken')">Dranken</button>
+    </div>
+
+    <!-- Broodjes -->
+    <div id="tab-broodjes" class="tab-content active">
+      <div class="menu-category">
+        <h2 class="font-heading text-2xl mb-4" style="color:#78350F;">Specialiteiten</h2>
+        <div class="menu-item"><span><strong>Gerookte zalm</strong><br><small style="color:#92400E;">Kruiden-roomkaas, gerookte zalm, sla, kappertjes en dressing (wasabi, mosterd-dille of sesam)</small></span><span class="font-bold ml-4" style="color:#92400E;">€ 4,95</span></div>
+        <div class="menu-item"><span><strong>Gerookte makreel</strong><br><small style="color:#92400E;">Gerookte makreel, sla en limoen-koriander dressing</small></span><span class="font-bold ml-4" style="color:#92400E;">€ 4,95</span></div>
+        <div class="menu-item"><span><strong>Brie special</strong><br><small style="color:#92400E;">Roombrie van het huis, rucola, walnoten en honing</small></span><span class="font-bold ml-4" style="color:#92400E;">€ 3,75</span></div>
+        <div class="menu-item"><span><strong>Martino</strong><br><small style="color:#92400E;">Filet-americain, martino-saus, gekookt eitje, augurk en vers gesnipperd uitje</small></span><span class="font-bold ml-4" style="color:#92400E;">€ 3,75</span></div>
+        <div class="menu-item"><span><strong>Vitello Tonato</strong><br><small style="color:#92400E;">Huisgemaakte tonijnsalade, fricandeau, sla en kappertjes</small></span><span class="font-bold ml-4" style="color:#92400E;">€ 3,75</span></div>
+        <div class="menu-item"><span><strong>Broodje buitenlandse kaas</strong><br><small style="color:#92400E;">Uit de kaaskoeling gekozen</small></span><span class="font-bold ml-4" style="color:#92400E;">€ 4,50</span></div>
+        <div class="menu-item"><span><strong>Broodje OudeKaasSalade</strong></span><span class="font-bold ml-4" style="color:#92400E;">€ 4,50</span></div>
+      </div>
+      <div class="menu-category">
+        <h2 class="font-heading text-2xl mb-4" style="color:#78350F;">Kaas (bruin of wit)</h2>
+        <div class="menu-item"><span>Broodje jonge kaas</span><span class="font-bold" style="color:#92400E;">€ 3,20</span></div>
+        <div class="menu-item"><span>Broodje oude kaas</span><span class="font-bold" style="color:#92400E;">€ 3,75</span></div>
+        <div class="menu-item"><span>Broodje roombrie</span><span class="font-bold" style="color:#92400E;">€ 3,20</span></div>
+        <div class="menu-item"><span>Broodje kruiden-roomkaas</span><span class="font-bold" style="color:#92400E;">€ 3,20</span></div>
+      </div>
+      <div class="menu-category">
+        <h2 class="font-heading text-2xl mb-4" style="color:#78350F;">Vleeswaren & Salades (bruin of wit)</h2>
+        <div class="menu-item"><span>Broodje beenham</span><span class="font-bold" style="color:#92400E;">€ 3,20</span></div>
+        <div class="menu-item"><span>Broodje gezond</span><span class="font-bold" style="color:#92400E;">€ 3,20</span></div>
+        <div class="menu-item"><span>Broodje seranoham</span><span class="font-bold" style="color:#92400E;">€ 3,20</span></div>
+        <div class="menu-item"><span>Broodje rosbief</span><span class="font-bold" style="color:#92400E;">€ 3,20</span></div>
+        <div class="menu-item"><span>Broodje paté</span><span class="font-bold" style="color:#92400E;">€ 3,20</span></div>
+        <div class="menu-item"><span>Broodje cervelaat</span><span class="font-bold" style="color:#92400E;">€ 3,20</span></div>
+        <div class="menu-item"><span>Broodje filet americain</span><span class="font-bold" style="color:#92400E;">€ 3,20</span></div>
+        <div class="menu-item"><span>Broodje spianata calabra</span><span class="font-bold" style="color:#92400E;">€ 3,20</span></div>
+        <div class="menu-item"><span>Broodje tonijnsalade</span><span class="font-bold" style="color:#92400E;">€ 3,20</span></div>
+        <div class="menu-item"><span>Broodje krabsalade</span><span class="font-bold" style="color:#92400E;">€ 3,50</span></div>
+        <div class="menu-item"><span>Broodje eiersalade</span><span class="font-bold" style="color:#92400E;">€ 3,20</span></div>
+      </div>
+      <div class="menu-category">
+        <h2 class="font-heading text-2xl mb-4" style="color:#78350F;">Kip (bruin of wit)</h2>
+        <div class="menu-item"><span>Broodje hete kip koud</span><span class="font-bold" style="color:#92400E;">€ 3,20</span></div>
+        <div class="menu-item"><span>Broodje kip ketjap</span><span class="font-bold" style="color:#92400E;">€ 3,20</span></div>
+        <div class="menu-item"><span>Broodje kip piri piri</span><span class="font-bold" style="color:#92400E;">€ 3,20</span></div>
+        <div class="menu-item"><span>Broodje kip pesto</span><span class="font-bold" style="color:#92400E;">€ 3,20</span></div>
+        <div class="menu-item"><span>Broodje kip kerrie</span><span class="font-bold" style="color:#92400E;">€ 3,20</span></div>
+        <div class="menu-item"><span>Broodje kipsaté</span><span class="font-bold" style="color:#92400E;">€ 3,50</span></div>
+      </div>
+      <div class="menu-category">
+        <h2 class="font-heading text-2xl mb-4" style="color:#78350F;">Overig & Gebakken</h2>
+        <div class="menu-item"><span>Broodje gekookt ei</span><span class="font-bold" style="color:#92400E;">€ 3,20</span></div>
+        <div class="menu-item"><span>Broodje gebakken ei</span><span class="font-bold" style="color:#92400E;">€ 3,25</span></div>
+        <div class="menu-item"><span>Broodje Bouwman bal</span><span class="font-bold" style="color:#92400E;">€ 3,20</span></div>
+        <div class="menu-item"><span>Broodje kroket</span><span class="font-bold" style="color:#92400E;">€ 2,75</span></div>
+        <div class="menu-item"><span>Broodje frikandel</span><span class="font-bold" style="color:#92400E;">€ 2,75</span></div>
+        <div class="menu-item"><span>Broodje hotdog deluxe</span><span class="font-bold" style="color:#92400E;">€ 6,95</span></div>
+        <div class="menu-item"><span>Turks brood hete kip</span><span class="font-bold" style="color:#92400E;">€ 7,95</span></div>
+        <div class="menu-item"><span>Worstenbroodje (varkensvlees)</span><span class="font-bold" style="color:#92400E;">€ 2,50</span></div>
+        <div class="menu-item"><span>Vegetarisch worstenbroodje</span><span class="font-bold" style="color:#92400E;">€ 2,50</span></div>
+        <div class="menu-item"><span>Kaas-uienbroodje</span><span class="font-bold" style="color:#92400E;">€ 2,50</span></div>
+      </div>
+      <div class="menu-category">
+        <h2 class="font-heading text-2xl mb-4" style="color:#78350F;">Tosti</h2>
+        <div class="menu-item"><span>Tosti kaas</span><span class="font-bold" style="color:#92400E;">€ 2,00</span></div>
+        <div class="menu-item"><span>Tosti ham-kaas</span><span class="font-bold" style="color:#92400E;">€ 2,25</span></div>
+        <div class="menu-item"><span>Vlam tosti</span><span class="font-bold" style="color:#92400E;">€ 2,75</span></div>
+      </div>
+    </div>
+
+    <!-- Warm -->
+    <div id="tab-warm" class="tab-content">
+      <div class="menu-category">
+        <h2 class="font-heading text-2xl mb-4" style="color:#78350F;">Uitsmijters & Omeletten</h2>
+        <div class="menu-item"><span>Uitsmijter 2 eieren (ham en/of kaas)</span><span class="font-bold" style="color:#92400E;">€ 5,50</span></div>
+        <div class="menu-item"><span>Omelet 2 eieren (ham en/of kaas)</span><span class="font-bold" style="color:#92400E;">€ 5,95</span></div>
+        <div class="menu-item"><span>Uitsmijter 3 eieren (ham en/of kaas)</span><span class="font-bold" style="color:#92400E;">€ 6,50</span></div>
+        <div class="menu-item"><span>Omelet 3 eieren (ham en/of kaas)</span><span class="font-bold" style="color:#92400E;">€ 6,95</span></div>
+        <div class="menu-item"><span><strong>Uitsmijter Kaashuis 2 eieren</strong><br><small style="color:#92400E;">Rosbief, rucola, truffelmayo en Parmezaanse kaas</small></span><span class="font-bold ml-4" style="color:#92400E;">€ 7,95</span></div>
+      </div>
+      <div class="menu-category">
+        <h2 class="font-heading text-2xl mb-4" style="color:#78350F;">Sauzen</h2>
+        <div class="menu-item"><span>Mayonaise</span><span class="font-bold" style="color:#92400E;">€ 0,50</span></div>
+        <div class="menu-item"><span>Curry</span><span class="font-bold" style="color:#92400E;">€ 0,50</span></div>
+        <div class="menu-item"><span>Tomaten ketchup</span><span class="font-bold" style="color:#92400E;">€ 0,50</span></div>
+        <div class="menu-item"><span>Knoflooksaus</span><span class="font-bold" style="color:#92400E;">€ 0,75</span></div>
+        <div class="menu-item"><span>Chilisaus</span><span class="font-bold" style="color:#92400E;">€ 0,50</span></div>
+      </div>
+    </div>
+
+    <!-- Burgers -->
+    <div id="tab-burgers" class="tab-content">
+      <div class="menu-category">
+        <h2 class="font-heading text-2xl mb-4" style="color:#78350F;">Burgers</h2>
+        <div class="menu-item"><span>Real burger</span><span class="font-bold" style="color:#92400E;">€ 4,50</span></div>
+        <div class="menu-item"><span>Big American</span><span class="font-bold" style="color:#92400E;">€ 4,95</span></div>
+        <div class="menu-item"><span>Russian burger</span><span class="font-bold" style="color:#92400E;">€ 5,50</span></div>
+        <div class="menu-item"><span>African Spicy Chickenburger</span><span class="font-bold" style="color:#92400E;">€ 5,50</span></div>
+        <div class="menu-item"><span>Kipburger</span><span class="font-bold" style="color:#92400E;">€ 5,50</span></div>
+        <div class="menu-item"><span>Kaashuisburger</span><span class="font-bold" style="color:#92400E;">€ 5,95</span></div>
+        <div class="menu-item"><span>Truffelburger</span><span class="font-bold" style="color:#92400E;">€ 5,95</span></div>
+        <div class="menu-item"><span>Veggie bietenburger</span><span class="font-bold" style="color:#92400E;">€ 7,95</span></div>
+        <div class="menu-item"><span>Meerprijs burger menu (friet, saus en salade)</span><span class="font-bold" style="color:#92400E;">€ 4,00</span></div>
+      </div>
+    </div>
+
+    <!-- Frituur -->
+    <div id="tab-frituur" class="tab-content">
+      <div class="menu-category">
+        <h2 class="font-heading text-2xl mb-4" style="color:#78350F;">Friet</h2>
+        <div class="menu-item"><span>Friet zonder – middel</span><span class="font-bold" style="color:#92400E;">€ 2,50</span></div>
+        <div class="menu-item"><span>Friet zonder – groot</span><span class="font-bold" style="color:#92400E;">€ 3,50</span></div>
+        <div class="menu-item"><span>Friet mayonaise – middel</span><span class="font-bold" style="color:#92400E;">€ 3,25</span></div>
+        <div class="menu-item"><span>Friet mayonaise – groot</span><span class="font-bold" style="color:#92400E;">€ 4,25</span></div>
+        <div class="menu-item"><span>Friet speciaal – middel</span><span class="font-bold" style="color:#92400E;">€ 3,75</span></div>
+        <div class="menu-item"><span>Friet speciaal – groot</span><span class="font-bold" style="color:#92400E;">€ 4,75</span></div>
+        <div class="menu-item"><span>Friet saté saus – middel</span><span class="font-bold" style="color:#92400E;">€ 4,00</span></div>
+        <div class="menu-item"><span>Friet saté saus – groot</span><span class="font-bold" style="color:#92400E;">€ 5,00</span></div>
+      </div>
+      <div class="menu-category">
+        <h2 class="font-heading text-2xl mb-4" style="color:#78350F;">Snacks</h2>
+        <div class="menu-item"><span>Frikandel zonder</span><span class="font-bold" style="color:#92400E;">€ 1,75</span></div>
+        <div class="menu-item"><span>Frikandel mayonaise</span><span class="font-bold" style="color:#92400E;">€ 2,00</span></div>
+        <div class="menu-item"><span>Frikandel speciaal</span><span class="font-bold" style="color:#92400E;">€ 2,25</span></div>
+        <div class="menu-item"><span>Vleeskroket</span><span class="font-bold" style="color:#92400E;">€ 2,00</span></div>
+        <div class="menu-item"><span>Bitterballen (6 stuks)</span><span class="font-bold" style="color:#92400E;">€ 3,00</span></div>
+        <div class="menu-item"><span>Kipnuggets (6 stuks)</span><span class="font-bold" style="color:#92400E;">€ 3,00</span></div>
+        <div class="menu-item"><span>Bouwman bal uit de jus</span><span class="font-bold" style="color:#92400E;">€ 1,75</span></div>
+        <div class="menu-item"><span>Bouwman bal met mayo</span><span class="font-bold" style="color:#92400E;">€ 2,00</span></div>
+        <div class="menu-item"><span>Bouwman bal met saté saus</span><span class="font-bold" style="color:#92400E;">€ 2,40</span></div>
+      </div>
+    </div>
+
+    <!-- Dranken -->
+    <div id="tab-dranken" class="tab-content">
+      <div class="menu-category">
+        <h2 class="font-heading text-2xl mb-4" style="color:#78350F;">Warme dranken</h2>
+        <div class="menu-item"><span>Koffie</span><span class="font-bold" style="color:#92400E;">€ 1,75</span></div>
+        <div class="menu-item"><span>Cappuccino</span><span class="font-bold" style="color:#92400E;">€ 2,00</span></div>
+        <div class="menu-item"><span>Thee</span><span class="font-bold" style="color:#92400E;">€ 1,50</span></div>
+        <div class="menu-item"><span>Verse munt-thee</span><span class="font-bold" style="color:#92400E;">€ 3,00</span></div>
+        <div class="menu-item"><span>Warme chocomel</span><span class="font-bold" style="color:#92400E;">€ 3,00</span></div>
+      </div>
+      <div class="menu-category">
+        <h2 class="font-heading text-2xl mb-4" style="color:#78350F;">Smoothies</h2>
+        <div class="menu-item"><span>Rood – aardbei, framboos, rode bessen</span><span class="font-bold" style="color:#92400E;">€ 3,95</span></div>
+        <div class="menu-item"><span>Groen – mango, ananas, banaan, spinazie</span><span class="font-bold" style="color:#92400E;">€ 3,95</span></div>
+        <div class="menu-item"><span>Geel – ananas, mango, kokos</span><span class="font-bold" style="color:#92400E;">€ 3,95</span></div>
+      </div>
+      <div class="menu-category">
+        <h2 class="font-heading text-2xl mb-4" style="color:#78350F;">Koude dranken</h2>
+        <div class="menu-item"><span>Verse jus d'orange (glas / flesje)</span><span class="font-bold" style="color:#92400E;">€ 3,00 / € 3,50</span></div>
+        <div class="menu-item"><span>Puur sap uit de tap (appel, appel-peer, appel-kers)</span><span class="font-bold" style="color:#92400E;">€ 2,25</span></div>
+        <div class="menu-item"><span>Vifit 500ml (bosvruchten / rode vruchten / aardbei)</span><span class="font-bold" style="color:#92400E;">€ 2,50</span></div>
+        <div class="menu-item"><span>Chocomelk</span><span class="font-bold" style="color:#92400E;">€ 2,00</span></div>
+        <div class="menu-item"><span>Fristi</span><span class="font-bold" style="color:#92400E;">€ 2,00</span></div>
+        <div class="menu-item"><span>Spa blauw</span><span class="font-bold" style="color:#92400E;">€ 1,65</span></div>
+        <div class="menu-item"><span>Spa Rood</span><span class="font-bold" style="color:#92400E;">€ 2,15</span></div>
+        <div class="menu-item"><span>Coca-Cola / Zero</span><span class="font-bold" style="color:#92400E;">€ 2,15</span></div>
+        <div class="menu-item"><span>Fanta (Lemon / Exotic / Cassis)</span><span class="font-bold" style="color:#92400E;">€ 2,15</span></div>
+        <div class="menu-item"><span>7up / Dr. Pepper</span><span class="font-bold" style="color:#92400E;">€ 2,15</span></div>
+        <div class="menu-item"><span>Lipton ice tea (sparkling / green / peach)</span><span class="font-bold" style="color:#92400E;">€ 2,15</span></div>
+        <div class="menu-item"><span>Red bull / Red bull no sugar</span><span class="font-bold" style="color:#92400E;">€ 2,90</span></div>
+        <div class="menu-item"><span>Vitamin Water</span><span class="font-bold" style="color:#92400E;">€ 3,15</span></div>
+        <div class="menu-item"><span>AA-drink</span><span class="font-bold" style="color:#92400E;">€ 2,15</span></div>
+        <div class="menu-item"><span>Capri Sun</span><span class="font-bold" style="color:#92400E;">€ 2,00</span></div>
+      </div>
+    </div>
+
+    <div class="text-center mt-10">
+      <a href="http://bestellen.kaashuisoss.com/" target="_blank" class="btn-gold text-lg">Online bestellen</a>
+    </div>
+  </div>
+</section>
+
+<footer class="py-8" style="background:#451a03; color:#FDE68A;">
+  <div class="max-w-6xl mx-auto px-4 text-center text-sm" style="color:#92400E;">
+    © 2026 Kaashuis Oss · Molenstraat 47, Oss · <a href="tel:0412769090" style="color:#92400E;" class="hover:text-yellow-300 cursor-pointer">0412 769 090</a> · Gebouwd door <a href="https://www.code-lieshout.nl" style="color:#92400E;" class="hover:text-yellow-300 cursor-pointer">Code Lieshout</a>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('hamburger').addEventListener('click', function() {
+    document.getElementById('mobile-menu').classList.toggle('open');
+  });
+  function showTab(tab) {
+    document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+    document.getElementById('tab-' + tab).classList.add('active');
+    event.target.classList.add('active');
+  }
+</script>
+</body>
+</html>
